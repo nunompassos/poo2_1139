@@ -1,10 +1,11 @@
 package tech.ada.e_commerce.domain.cliente;
 
+import tech.ada.e_commerce.domain.Identificador;
 import tech.ada.e_commerce.domain.cliente.objetos.Tipo;
 
 public class Cliente {
 
-    private final String id;
+    private final Identificador id;
     private final Tipo tipo;
     private String nome;
     private String email;
@@ -12,7 +13,7 @@ public class Cliente {
     private boolean ativo = true;
 
     private Cliente(
-        String id,
+        Identificador id,
         Tipo tipo,
         String nome,
         String email,
@@ -27,7 +28,7 @@ public class Cliente {
     }
 
     public static Cliente criar(
-        String id,
+        Identificador id,
         Tipo tipo,
         String nome,
         String email,
@@ -48,7 +49,7 @@ public class Cliente {
         this.email = novoEmail;
     }
 
-    public String id() {
+    public Identificador id() {
         return id;
     }
 

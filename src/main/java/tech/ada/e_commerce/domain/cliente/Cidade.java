@@ -14,7 +14,7 @@ public class Cidade {
         validar();
     }
 
-    public Cidade criar(String nome, String uf) {
+    public static Cidade criar(String nome, String uf) {
         return new Cidade(nome, uf);
     }
 
