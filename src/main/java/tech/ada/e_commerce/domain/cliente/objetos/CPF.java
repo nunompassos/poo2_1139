@@ -15,7 +15,7 @@ public class CPF extends Identificador<String> {
         return new CPF(id);
     }
 
-    public String getValor() {
+    public String valor() {
         return this.valor;
     }
 

@@ -15,7 +15,7 @@ public class CNPJ extends Identificador<String> {
         return new CNPJ(id);
     }
 
-    public String getValor() {
+    public String valor() {
         return this.valor;
     }
 
