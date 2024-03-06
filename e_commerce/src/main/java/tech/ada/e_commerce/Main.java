@@ -10,9 +10,13 @@ import tech.ada.e_commerce.domain.cliente.objetos.CEP;
 import tech.ada.e_commerce.domain.cliente.objetos.CNPJ;
 import tech.ada.e_commerce.domain.cliente.objetos.CPF;
 import tech.ada.e_commerce.domain.cliente.objetos.Tipo;
+import tech.ada.e_commerce.infraestrutura.cliente.ClienteListaGateway;
 
 public class Main {
     public static void main(String[] args) {
+
+        ClienteGateway cG = new ClienteListaGateway();
+        ClienteAplicacao cA = new ClienteAplicacao(cG);
 
     }
 }
