@@ -18,5 +18,9 @@ public class Main {
         ClienteGateway cG = new ClienteListaGateway();
         ClienteAplicacao cA = new ClienteAplicacao(cG);
 
+        ClienteDto cliente = new ClienteDto("11111111111", "Nuno", "email@email", "logradouro", "Bairro","11111111", "cidade", "Estado",Tipo.FISICA);
+        cA.adicionarCliente(cliente);
+
+
     }
 }

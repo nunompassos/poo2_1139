@@ -6,4 +6,8 @@ public class RespostaDePagamento {
     public String buscarIdentificador() {
         return this.identificador;
     }
+
+    public void definirIdentificador(String identificador) {
+        this.identificador = identificador;
+    }
 }

@@ -56,4 +56,8 @@ public class ClienteAplicacao {
 
         gateway.atualizar(cliente);
     }
+
+    public void imprimirClientes() {
+        gateway.buscarTodos().stream().forEach(System.out::println);
+    }
 }
