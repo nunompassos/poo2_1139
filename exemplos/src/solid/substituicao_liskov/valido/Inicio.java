@@ -16,7 +16,7 @@ public class Inicio {
         ValidadorDeFraude validadorSerasa = new ValidadorSerasaExperian();
 
         CartaoCredito cartao = new CartaoCredito(validador, validadorFraudio, manipuladorDeProcessadorDePagamentos);
-        CartaoDebito cartaoDebito = new CartaoDebito(validador, validadorSerasa, manipuladorDeProcessadorDePagamentos);
+        CartaoDebito cartaoDebito = new CartaoDebito(validador, validadorFraudio, manipuladorDeProcessadorDePagamentos);
         CartaoRecompensas cartaoRecompensas = new CartaoRecompensas();
 
         ProcessadorPagamentos processadorPagamentos =

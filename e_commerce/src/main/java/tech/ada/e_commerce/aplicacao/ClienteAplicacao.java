@@ -9,6 +9,7 @@ import tech.ada.e_commerce.domain.cliente.objetos.CEP;
 import tech.ada.e_commerce.domain.cliente.objetos.CNPJ;
 import tech.ada.e_commerce.domain.cliente.objetos.CPF;
 import tech.ada.e_commerce.domain.cliente.objetos.Tipo;
+import tech.ada.e_commerce.infraestrutura.cliente.ClienteH2Gateway;
 
 public class ClienteAplicacao {
 

@@ -48,4 +48,20 @@ public class Endereco {
             ", cidade=" + cidade +
             "}";
     }
+
+    public CEP getCep() {
+        return cep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
 }

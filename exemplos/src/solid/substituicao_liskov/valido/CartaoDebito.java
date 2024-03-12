@@ -2,7 +2,7 @@ package solid.substituicao_liskov.valido;
 
 public class CartaoDebito extends CartaoBancarioBasico {
 
-    private CartaoDebito(ValidadorMeioDePagamento meioDePagamento, ValidadorDeFraude fraude, ManipuladorDeProcessadorDePagamentos processador) {
+    public CartaoDebito(ValidadorMeioDePagamento meioDePagamento, ValidadorDeFraude fraude, ManipuladorDeProcessadorDePagamentos processador) {
         super(meioDePagamento, fraude, processador);
     }
 
