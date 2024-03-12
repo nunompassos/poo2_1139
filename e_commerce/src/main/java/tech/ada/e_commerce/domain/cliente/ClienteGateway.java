@@ -8,8 +8,6 @@ public interface ClienteGateway {
 
     void atualizar(Cliente cliente);
 
-    void apagar(Cliente cliente);
-
     Cliente buscarPorId(String id);
 
     List<Cliente> buscarTodos();

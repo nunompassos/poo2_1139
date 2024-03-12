@@ -49,19 +49,19 @@ public class Endereco {
             "}";
     }
 
-    public CEP getCep() {
+    public CEP cep() {
         return cep;
     }
 
-    public String getLogradouro() {
+    public String logradouro() {
         return logradouro;
     }
 
-    public String getBairro() {
+    public String bairro() {
         return bairro;
     }
 
-    public Cidade getCidade() {
+    public Cidade cidade() {
         return cidade;
     }
 }

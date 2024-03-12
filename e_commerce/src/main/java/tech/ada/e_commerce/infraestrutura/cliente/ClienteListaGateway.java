@@ -22,11 +22,6 @@ public class ClienteListaGateway implements ClienteGateway {
     }
 
     @Override
-    public void apagar(Cliente cliente) {
-        clientes.remove(cliente);
-    }
-
-    @Override
     public Cliente buscarPorId(String id) {
         for (Cliente c : clientes) {
             if (c.id().toString().equals(id)) {

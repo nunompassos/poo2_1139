@@ -5,15 +5,14 @@ import tech.ada.e_commerce.domain.cliente.objetos.Tipo;
 
 public class Cliente {
 
-    private final Identificador id;
+    private final Identificador<String> id;
     private final Tipo tipo;
     private String nome;
     private String email;
     private Endereco endereco;
-    private boolean ativo = true;
 
     private Cliente(
-        Identificador id,
+        Identificador<String> id,
         Tipo tipo,
         String nome,
         String email,
@@ -28,7 +27,7 @@ public class Cliente {
     }
 
     public static Cliente criar(
-        Identificador id,
+        Identificador<String> id,
         Tipo tipo,
         String nome,
         String email,
@@ -41,7 +40,7 @@ public class Cliente {
         this.endereco = novoEndereco;
     }
 
-    public void altearNome(String novoNome) {
+    public void alterarNome(String novoNome) {
         this.nome = novoNome;
     }
 
@@ -49,7 +48,7 @@ public class Cliente {
         this.email = novoEmail;
     }
 
-    public Identificador id() {
+    public Identificador<String> id() {
         return id;
     }
 
@@ -92,9 +91,5 @@ public class Cliente {
             ", email='" + email + '\'' +
             ", endereco=" + endereco +
             '}';
-    }
-
-    public void apagar() {
-        this.ativo = false;
     }
 }

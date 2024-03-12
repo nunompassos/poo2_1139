@@ -1,4 +1,4 @@
-package tech.ada.e_commerce.aplicacao;
+package tech.ada.e_commerce.aplicacao.cliente;
 
 import tech.ada.e_commerce.domain.Identificador;
 import tech.ada.e_commerce.domain.cliente.Cidade;
@@ -9,7 +9,6 @@ import tech.ada.e_commerce.domain.cliente.objetos.CEP;
 import tech.ada.e_commerce.domain.cliente.objetos.CNPJ;
 import tech.ada.e_commerce.domain.cliente.objetos.CPF;
 import tech.ada.e_commerce.domain.cliente.objetos.Tipo;
-import tech.ada.e_commerce.infraestrutura.cliente.ClienteH2Gateway;
 
 public class ClienteAplicacao {
 
@@ -19,7 +18,7 @@ public class ClienteAplicacao {
         this.gateway = gateway;
     }
 
-    public void adicionarCliente(ClienteDto dto) {
+    public void cadastrar(ClienteDto dto) {
 
         final Identificador idValido = dto.tipo() == Tipo.FISICA ? CPF.criar(dto.id()) : CNPJ.criar(dto.id());
         final CEP cep = CEP.criar(dto.cep());
@@ -37,7 +36,7 @@ public class ClienteAplicacao {
             throw new RuntimeException("Cliente não existe!");
         }
 
-        cliente.altearNome(nome);
+        cliente.alterarNome(nome);
         cliente.alterarEmail(email);
 
         gateway.atualizar(cliente);

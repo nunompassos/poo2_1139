@@ -49,8 +49,6 @@ public class ClienteH2Gateway implements ClienteGateway {
     private final static String BUSCAR_ENDERECO_POR_ID = "SELECT * FROM endereco WHERE id = '%s';";
     private final static String BUSCAR_TODOS_CLIENTES = "SELECT * FROM cliente;";
 
-    private final EnderecoGateway enderecoGateway;
-
     public ClienteH2Gateway() {
         try (Connection c = connect()) {
             Statement statement = c.createStatement();
@@ -66,16 +64,15 @@ public class ClienteH2Gateway implements ClienteGateway {
         final UUID enderecoId = UUID.randomUUID();
         try (Connection c = connect()) {
             Statement statement = c.createStatement();
-            enderecoGateway.salvar(....)
             statement.execute(
                 String.format(
                     INSERIR_ENDERECO,
                     enderecoId,
-                    cliente.endereco().getCep().valor(),
-                    cliente.endereco().getLogradouro(),
-                    cliente.endereco().getBairro(),
-                    cliente.endereco().getCidade().nome(),
-                    cliente.endereco().getCidade().uf()
+                    cliente.endereco().cep().valor(),
+                    cliente.endereco().logradouro(),
+                    cliente.endereco().bairro(),
+                    cliente.endereco().cidade().nome(),
+                    cliente.endereco().cidade().uf()
                 )
             );
             statement.execute(
@@ -99,11 +96,6 @@ public class ClienteH2Gateway implements ClienteGateway {
     }
 
     @Override
-    public void apagar(Cliente cliente) {
-
-    }
-
-    @Override
     public Cliente buscarPorId(String id) {
         try (Connection c = connect()) {
             Statement statement = c.createStatement();
@@ -112,7 +104,8 @@ public class ClienteH2Gateway implements ClienteGateway {
             );
             while (result.next()) {
                 String enderecoId = result.getString("enderecoId");
-                ResultSet enderecoResult = statement.executeQuery(
+                Statement enderecoStatement = connect().createStatement();
+                ResultSet enderecoResult = enderecoStatement.executeQuery(
                     String.format(BUSCAR_ENDERECO_POR_ID, enderecoId)
                 );
                 enderecoResult.next();
